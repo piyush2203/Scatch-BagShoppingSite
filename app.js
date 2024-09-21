@@ -5,7 +5,7 @@ const path = require("path");
 const { log } = require("console");
 const flash = require("connect-flash");
 const expressSession = require("express-session");
- 
+// const app = require('./server');
 require("dotenv").config();
 
 const indexRouter = require("./routes/index")
@@ -34,7 +34,8 @@ app.use("/", indexRouter)
 app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000,()=>{
-    console.log("port is started at 3000");
+app.listen(PORT ,()=>{
+    console.log(`port is started at  ${PORT}`);
 });

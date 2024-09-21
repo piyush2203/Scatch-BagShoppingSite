@@ -52,7 +52,7 @@ module.exports.loginUser = async function(req,res){
         }
         else{
             res.redirect("/");
-            res.flash("error", "Email or Password is incorect")
+            // res.flash("error", "Email or Password is incorect")
         }
     });
 };
