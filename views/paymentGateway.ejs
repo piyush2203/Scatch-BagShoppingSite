@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      
+
+      <style>
+        body{
+            /* background-image: url("bg-2.jpg"); */
+        }
+    </style>
+</head>
+<body class=" flex items-center justify-center min-h-screen  bg-gray-200 font-[poppins]" >
+   <div class="items-center flex justify-center flex-col ">
+    <div class="md:w-[40%] w-[65%] mb-2 h-[80%] flex justify-center items-center">
+        <img src="/images/rayzorpay.png" alt="" class="w-[50%] h-[100%] justify-center items-center">
+    </div>
+    <div class="bg-white shadow-lg border-2 border-gray-700 shadow-lg rounded-lg  w-[70%] md:w-[50%] mx-4 sm:mx-0">
+        
+        <div class="bg-blue-600 text-white text-center py-4 rounded-t-lg">
+            <h1 class="md:text-2xl text-xl font-bold">Payment Gateway</h1>
+        </div>
+        <div class="p-6">
+            <form id="payment-form" action="#" method="POST">
+                <div class="mb-4">
+                    <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
+                    <span class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" id="amount"><%= amounts %></span>
+                    <!-- <a type="text" id="amount" name="amount" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" autofocus="autofocus" placeholder=<%= amounts %> required > -->
+                </div>
+                <div class="mb-4">
+                    <label for="card-number" class="block text-sm font-medium text-gray-700">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="1234 5678 1234 5678" required>
+                </div>
+                <div class="flex gap-4 mb-4">
+                    <div class="w-1/2">
+                        <label for="expiry-date" class="block text-sm font-medium text-gray-700">Expiry Date</label>
+                        <input type="text" id="expiry-date" name="expiry-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="MM/YY" required>
+                    </div>
+                    <div class="w-1/2">
+                        <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+                        <input type="text" id="cvv" name="cvv" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="123" required>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Pay Now</button>
+                    <a href="/cart" class="px-4 py-2 bg-red-500 text-white font-bold rounded-lg shadow-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+   </div>
+
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert('Payment Successful!');
+        });
+    </script>
+</body>
+</html>
